@@ -18,7 +18,7 @@ module Mulukhiya
       end
 
       def logger_class
-        return Logger
+        return Ginseng::Logger
       end
 
       def logger
@@ -27,7 +27,7 @@ module Mulukhiya
       end
 
       def http_class
-        return Ginseng::HTTP
+        return HTTP
       end
 
       def self.name
