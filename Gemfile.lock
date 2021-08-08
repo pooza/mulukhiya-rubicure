@@ -132,6 +132,7 @@ GEM
       power_assert
     time (0.1.0)
       date
+    timecop (0.9.4)
     timeout (0.1.1)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
@@ -155,6 +156,7 @@ DEPENDENCIES
   rubocop-performance
   rubocop-rake
   test-unit
+  timecop
 
 RUBY VERSION
    ruby 3.0.2p107

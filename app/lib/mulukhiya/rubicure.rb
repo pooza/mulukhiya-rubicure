@@ -30,9 +30,9 @@ module Mulukhiya
 
     def self.load_tasks
       Dir.glob(File.join(dir, 'app/task/*.rb')).each do |f|
-      require f
+        require f
+      end
     end
-  end
 
     Bundler.require
     loader.setup
