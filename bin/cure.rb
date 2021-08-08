@@ -9,7 +9,7 @@ module Mulukhiya
     warn Package.full_name
     warn ''
     raise 'tool undefined' unless ARGV.first
-    puts Tool.create(ARGV.first).exec(ARGV).to_json
+    puts JSON.pretty_generate(Tool.create(ARGV.first).exec(ARGV))
   rescue => e
     warn e.message
     exit 1

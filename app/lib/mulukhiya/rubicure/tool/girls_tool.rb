@@ -11,8 +11,12 @@ module Mulukhiya
       end
 
       def girl(name)
-        name = "cure_#{name.sub(/^cure_/, '')}"
-        return ::Rubicure::Girl.find(name.to_sym).to_h
+        [name, "cure_#{name.sub(/^cure_/, '')}"].map(&:to_sym).each do |sym|
+          next unless girl = ::Rubicure::Girl.find(sym)
+          return girl.to_h
+        rescue NameError
+          # nop
+        end
       end
     end
   end
