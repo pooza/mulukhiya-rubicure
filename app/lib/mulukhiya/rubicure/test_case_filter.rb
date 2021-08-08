@@ -10,7 +10,8 @@ module Mulukhiya
       def self.all
         return enum_for(__method__) unless block_given?
         config.raw.dig('test', 'filters').each do |entry|
-          yield "Mulukhiya::Rubicure::#{entry['name'].camelize}TestCaseFilter".constantize.new(entry)
+          case_class = "Mulukhiya::Rubicure::#{entry['name'].camelize}TestCaseFilter".constantize
+          yield case_class.new(entry)
         end
       end
     end
