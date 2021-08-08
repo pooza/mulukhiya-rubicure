@@ -18,16 +18,11 @@ module Mulukhiya
       end
 
       def logger_class
-        return Ginseng::Logger
+        return Logger
       end
 
       def logger
-        @logger ||= logger_class.new
-        return @logger
-      end
-
-      def http_class
-        return HTTP
+        return Logger.new
       end
 
       def self.name
@@ -55,12 +50,12 @@ module Mulukhiya
       end
 
       module Methods
-        def logger
-          return Logger.new
-        end
-
         def config
           return Config.instance
+        end
+
+        def logger
+          return Logger.new
         end
       end
     end

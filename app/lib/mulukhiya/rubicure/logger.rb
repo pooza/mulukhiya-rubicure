@@ -1,6 +1,6 @@
 module Mulukhiya
   module Rubicure
-    class HTTP < Ginseng::HTTP
+    class Logger < Ginseng::Logger
       include Package
     end
   end

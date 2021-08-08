@@ -9,7 +9,6 @@ module Mulukhiya
     warn Package.full_name
     warn ''
 
-
   rescue => e
     warn e.message
     exit 1

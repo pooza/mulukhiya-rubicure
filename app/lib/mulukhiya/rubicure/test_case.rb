@@ -25,8 +25,8 @@ module Mulukhiya
       def self.names(cases = nil)
         if cases
           names = cases.split(',')
-            .map {|v| [v, "#{v}Test", v.underscore, "#{v.underscore}_test"]}.flatten
-            .select {|v| File.exist?(File.join(dir, "#{v}.rb"))}.compact.uniq
+            .map {|v| [v, v.underscore, v.underscore.sub(/_test$/, '')]}.flatten
+            .select {|v| File.exist?(File.join(dir, "#{v}.rb"))}.compact
         else
           names = Dir.glob(File.join(dir, '*.rb')).map {|v| File.basename(v, '.rb')}
         end
