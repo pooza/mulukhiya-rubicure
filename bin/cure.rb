@@ -8,8 +8,8 @@ module Mulukhiya
   module Rubicure
     warn Package.full_name
     warn ''
-    raise 'tool undefined' unless ARGV.first
-    puts JSON.pretty_generate(Tool.create(ARGV.first).exec(ARGV))
+    raise 'tool undefined' unless name = ARGV.first
+    puts JSON.pretty_generate(Tool.create(name).exec(ARGV))
   rescue => e
     warn e.message
     exit 1
