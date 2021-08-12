@@ -27,6 +27,10 @@ module Mulukhiya
         assert_equal(girl[:human_name], '剣崎 真琴')
         assert_equal(girl[:precure_name], 'キュアソード')
         assert_equal(@tool.type, 'application/json; charset=UTF-8')
+
+        girl = @tool.exec(['girls', 'moonlight'])
+        assert_kind_of(Hash, girl)
+        assert_equal(girl[:transform_message], "プリキュア！オープンマイハート！\n月光に冴える一輪の花 キュアムーンライト！\nハートキャッチ、プリキュア！")
       end
 
       def test_calendar
