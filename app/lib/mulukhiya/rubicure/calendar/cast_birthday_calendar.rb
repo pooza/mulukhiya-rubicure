@@ -1,6 +1,6 @@
 module Mulukhiya
   module Rubicure
-    class CastsBirthdayCalendar < Calendar
+    class CastBirthdayCalendar < Calendar
       def events
         entries = {}
         Precure.all.select(&:have_cast_birthday?).each do |girl|
