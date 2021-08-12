@@ -5,6 +5,8 @@ module Mulukhiya
         case args[1]&.underscore
         when nil
           return all
+        when 'index'
+          return index
         when 'calendar'
           @type = 'text/calendar; charset=UTF-8'
           return ical
@@ -15,6 +17,10 @@ module Mulukhiya
 
       def all
         return Precure.all.map(&:to_h)
+      end
+
+      def index
+        return Precure.all.map(&:girl_name)
       end
 
       def ical
@@ -39,6 +45,16 @@ module Mulukhiya
         rescue NameError
           # nop
         end
+      end
+
+      def help
+        return [
+          'bin/cure.rb girls - すべてのプリキュア (JSON)',
+          'bin/cure.rb girls index - すべてのプリキュアの名前 (JSON)',
+          'bin/cure.rb girls :name - 指定したプリキュア (JSON)',
+          '  ex) bin/cure.rb girls black # キュアブラックを表示',
+          'bin/cure.rb girls calendar - プリキュアの誕生日カレンダー (iCalendar)',
+        ]
       end
     end
   end

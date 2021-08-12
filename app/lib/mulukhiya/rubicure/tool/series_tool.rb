@@ -2,8 +2,18 @@ module Mulukhiya
   module Rubicure
     class SeriesTool < Tool
       def exec(args = {})
-        return all unless args[1]
-        return series(args[1])
+        case args[1]&.underscore
+        when nil
+          return all
+        when 'index'
+          return index
+        else
+          return series(args[1])
+        end
+      end
+
+      def index
+        return Precure.map(&:series_name)
       end
 
       def all
@@ -12,6 +22,15 @@ module Mulukhiya
 
       def series(name)
         return ::Rubicure::Series.find(name.to_sym).to_h
+      end
+
+      def help
+        return [
+          'bin/cure.rb series - すべてのシリーズ (JSON)',
+          'bin/cure.rb series index - すべてのシリーズの名前 (JSON)',
+          'bin/cure.rb series :name - 指定したシリーズ (JSON)',
+          '  ex) bin/cure.rb series unmarked # ふたりはプリキュアを表示',
+        ]
       end
     end
   end

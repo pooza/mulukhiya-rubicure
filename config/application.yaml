@@ -7,3 +7,9 @@ package:
   license: MIT
   url: https://github.com/pooza/mulukhiya-rubicure
   version: 1.0.0
+tools:
+  - girls
+  - series
+  - cast
+  - livecure
+  - help

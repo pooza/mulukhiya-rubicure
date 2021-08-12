@@ -23,6 +23,10 @@ module Mulukhiya
         ical.publish
         return ical.to_ical
       end
+
+      def help
+        return ['bin/cure.rb cast ical - キャストの誕生日カレンダー (iCalendar)']
+      end
     end
   end
 end

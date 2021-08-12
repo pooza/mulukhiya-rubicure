@@ -14,6 +14,10 @@ module Mulukhiya
         end
         return events.sort.to_h
       end
+
+      def help
+        return ['bin/cure.rb livecure - 直近の実況日程 (JSON)']
+      end
     end
   end
 end

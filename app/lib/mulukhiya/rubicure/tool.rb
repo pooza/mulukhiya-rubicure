@@ -21,8 +21,19 @@ module Mulukhiya
         return contents.join("\n")
       end
 
+      def help
+        return "-- #{self.class} のヘルプは未定義 --"
+      end
+
       def self.create(name)
         return "Mulukhiya::Rubicure::#{name.camelize}Tool".constantize.new
+      end
+
+      def self.all
+        return enum_for(__method__) unless block_given?
+        config['/tools'].each do |name|
+          yield create(name)
+        end
       end
 
       private
