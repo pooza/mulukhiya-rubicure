@@ -69,6 +69,9 @@ GEM
       multi_xml (>= 0.5.2)
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
+    icalendar (2.7.1)
+      ice_cube (~> 0.16)
+    ice_cube (0.16.3)
     io-wait (0.1.0)
     json-schema (2.8.1)
       addressable (>= 2.4)
@@ -150,6 +153,7 @@ PLATFORMS
 
 DEPENDENCIES
   ginseng-core!
+  icalendar
   ricecream
   rubicure!
   rubocop

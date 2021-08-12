@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 ruby '~>3.0.0'
 gem 'ginseng-core', github: 'pooza/ginseng-core', require: 'ginseng'
+gem 'icalendar'
 gem 'rubicure', github: 'pooza/rubicure'
 
 group :development do

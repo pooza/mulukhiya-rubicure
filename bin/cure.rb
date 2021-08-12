@@ -6,10 +6,8 @@ ENV['BUNDLE_GEMFILE'] = File.join(dir, 'Gemfile')
 require 'mulukhiya/rubicure'
 module Mulukhiya
   module Rubicure
-    warn Package.full_name
-    warn ''
-    raise 'tool undefined' unless name = ARGV.first
-    puts JSON.pretty_generate(Tool.create(name).exec(ARGV))
+    raise 'tool undefined' unless name = ARGV.first.underscore
+    puts Tool.create(name).body(ARGV)
   rescue => e
     warn e.message
     exit 1
