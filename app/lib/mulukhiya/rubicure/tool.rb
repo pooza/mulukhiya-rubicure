@@ -11,8 +11,8 @@ module Mulukhiya
       end
 
       def body(args)
-        contents = ["Content-Type: #{type}", '']
         result = exec(args)
+        contents = ["Content-Type: #{type}", '']
         if result.is_a?(String)
           contents.push(result)
         else
@@ -28,7 +28,7 @@ module Mulukhiya
       private
 
       def initialize
-        @type = 'text/calendar; charset=UTF-8'
+        @type = 'application/json; charset=UTF-8'
       end
     end
   end

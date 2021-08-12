@@ -2,9 +2,15 @@ module Mulukhiya
   module Rubicure
     class GirlsTool < Tool
       def exec(args)
-        return all unless args[1]
-        return ical if args[1].underscore == 'calendar'
-        return girl(args[1])
+        case args[1]&.underscore
+        when nil
+          return all
+        when 'calendar'
+          @type = 'text/calendar; charset=UTF-8'
+          return ical
+        else
+          return girl(args[1])
+        end
       end
 
       def all
