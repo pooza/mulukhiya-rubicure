@@ -1,7 +1,7 @@
 module Mulukhiya
   module Rubicure
     class LivecureTool < Tool
-      def exec(args)
+      def exec(args = {})
         events = {}
         GirlsBirthdayCalendar.new(all: false).events.each do |date, girls|
           events[date] = girls.map {|g| g.merge(type: 'precure')}

@@ -6,11 +6,11 @@ module Mulukhiya
       include Package
       attr_reader :type
 
-      def exec(args)
+      def exec(args = {})
         raise Ginseng::ImplementError, "'#{__method__}' not implemented"
       end
 
-      def body(args)
+      def body(args = {})
         result = exec(args)
         contents = ["Content-Type: #{type}", '']
         if result.is_a?(String)

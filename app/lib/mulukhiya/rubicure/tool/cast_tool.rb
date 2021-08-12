@@ -1,7 +1,7 @@
 module Mulukhiya
   module Rubicure
     class CastTool < Tool
-      def exec(args)
+      def exec(args = {})
         case args[1]&.underscore
         when 'calendar'
           @type = 'text/calendar; charset=UTF-8'

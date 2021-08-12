@@ -1,7 +1,7 @@
 module Mulukhiya
   module Rubicure
     class SeriesTool < Tool
-      def exec(args)
+      def exec(args = {})
         return all unless args[1]
         return series(args[1])
       end

@@ -1,7 +1,7 @@
 module Mulukhiya
   module Rubicure
     class GirlsTool < Tool
-      def exec(args)
+      def exec(args = {})
         case args[1]&.underscore
         when nil
           return all
