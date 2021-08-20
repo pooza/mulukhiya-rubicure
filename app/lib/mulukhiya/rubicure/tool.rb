@@ -22,7 +22,7 @@ module Mulukhiya
       end
 
       def help
-        return "-- #{self.class} のヘルプは未定義 --"
+        return ["-- #{self.class} のヘルプは未定義 --"]
       end
 
       def self.create(name)
