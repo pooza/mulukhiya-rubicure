@@ -40,7 +40,7 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (6.1.4)
+    activesupport (6.1.4.1)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
@@ -59,6 +59,7 @@ GEM
     erb (2.2.3)
       cgi
     facets (3.1.0)
+    ffi (1.15.3-x64-mingw32)
     fileutils (1.5.0)
     hashie (4.1.0)
     http-accept (1.7.0)
@@ -92,6 +93,8 @@ GEM
     nokogiri (1.12.3)
       mini_portile2 (~> 2.6.1)
       racc (~> 1.4)
+    nokogiri (1.12.3-x64-mingw32)
+      racc (~> 1.4)
     nokogiri (1.12.3-x86_64-linux)
       racc (~> 1.4)
     optparse (0.1.1)
@@ -109,20 +112,26 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
+    rest-client (2.1.0-x64-mingw32)
+      ffi (~> 1.9)
+      http-accept (>= 1.7.0, < 2.0)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 4.0)
+      netrc (~> 0.8)
     rexml (3.2.5)
     ricecream (0.2.0)
-    rubocop (1.18.4)
+    rubocop (1.19.1)
       parallel (~> 1.10)
       parser (>= 3.0.0.0)
       rainbow (>= 2.2.2, < 4.0)
       regexp_parser (>= 1.8, < 3.0)
       rexml
-      rubocop-ast (>= 1.8.0, < 2.0)
+      rubocop-ast (>= 1.9.1, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 3.0)
-    rubocop-ast (1.9.1)
+    rubocop-ast (1.10.0)
       parser (>= 3.0.1.1)
-    rubocop-performance (1.11.4)
+    rubocop-performance (1.11.5)
       rubocop (>= 1.7.0, < 2.0)
       rubocop-ast (>= 0.4.0)
     rubocop-rake (0.6.0)
@@ -151,6 +160,7 @@ GEM
     zlib (1.1.0)
 
 PLATFORMS
+  x64-mingw32
   x86_64-freebsd-12
   x86_64-linux
 
