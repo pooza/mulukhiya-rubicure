@@ -144,10 +144,9 @@ GEM
     securerandom (0.1.0)
     sengiri_yaml (0.0.3)
     set (1.0.1)
-    test-unit (3.4.4)
+    test-unit (3.4.7)
       power_assert
     time (0.1.0)
-      date
     timecop (0.9.4)
     timeout (0.1.1)
     tzinfo (2.0.4)
