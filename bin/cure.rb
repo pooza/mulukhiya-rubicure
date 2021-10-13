@@ -7,7 +7,7 @@ Dir.chdir(dir)
 require 'mulukhiya/rubicure'
 module Mulukhiya
   module Rubicure
-    raise 'tool undefined' unless name = ARGV.first.underscore
+    raise 'tool undefined' unless name = ARGV.first&.underscore
     puts Tool.create(name).body(ARGV)
   rescue => e
     warn Package.full_name
