@@ -147,7 +147,7 @@ GEM
     securerandom (0.1.1)
     sengiri_yaml (0.0.3)
     set (1.0.2)
-    test-unit (3.4.8)
+    test-unit (3.5.1)
       power_assert
     time (0.2.0)
       date
