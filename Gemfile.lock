@@ -168,6 +168,7 @@ GEM
 PLATFORMS
   x64-mingw32
   x86_64-freebsd-12
+  x86_64-freebsd-13
   x86_64-linux
 
 DEPENDENCIES
