@@ -1,18 +1,18 @@
 GIT
   remote: https://github.com/pooza/ginseng-core.git
-  revision: 41f42e6f97bd287972a490d095262b2d66c7f279
+  revision: e0cc9eca30bc1de7d9488e8edeeab3a0d57cf154
   specs:
-    ginseng-core (1.11.11)
+    ginseng-core (1.11.15)
       activesupport (>= 6.1.3.2)
       addressable (>= 2.8.0)
-      bundler
+      bundler (~> 2.0)
       cgi (>= 0.3.1)
       daemon-spawn
       date (>= 3.2.1)
       erb
       etc
       facets
-      fileutils (= 1.5.0)
+      fileutils (>= 1.5.0)
       find
       httparty
       json-schema
@@ -33,9 +33,9 @@ GIT
 
 GIT
   remote: https://github.com/pooza/rubicure.git
-  revision: 2156766182f6a3a3e6e51cb701c192aad69a1653
+  revision: 3769a934a2470badf1d936145b9cfdc1724d0af4
   specs:
-    rubicure (2.1.4.0)
+    rubicure (2.1.5.0)
       activesupport (>= 5.0.0)
       hashie (>= 2.0.5)
       sengiri_yaml (>= 0.0.2)
@@ -43,12 +43,11 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (6.1.4.1)
+    activesupport (7.0.0)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
-      zeitwerk (~> 2.3)
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
     ast (2.4.2)
@@ -88,7 +87,7 @@ GEM
     mime-types-data (3.2021.1115)
     mini_mime (1.1.2)
     mini_portile2 (2.6.1)
-    minitest (5.14.4)
+    minitest (5.15.0)
     multi_json (1.15.0)
     multi_xml (0.6.0)
     net-protocol (0.1.2)
@@ -104,14 +103,14 @@ GEM
       racc (~> 1.4)
     optparse (0.2.0)
     parallel (1.21.0)
-    parser (3.0.3.0)
+    parser (3.0.3.2)
       ast (~> 2.4.1)
     power_assert (2.0.1)
     public_suffix (4.0.6)
     racc (1.6.0)
     rainbow (3.0.0)
     rake (13.0.6)
-    regexp_parser (2.1.1)
+    regexp_parser (2.2.0)
     rest-client (2.1.0)
       http-accept (>= 1.7.0, < 2.0)
       http-cookie (>= 1.0.2, < 2.0)
@@ -134,7 +133,7 @@ GEM
       rubocop-ast (>= 1.12.0, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 3.0)
-    rubocop-ast (1.13.0)
+    rubocop-ast (1.15.0)
       parser (>= 3.0.1.1)
     rubocop-performance (1.12.0)
       rubocop (>= 1.7.0, < 2.0)
@@ -148,7 +147,7 @@ GEM
     securerandom (0.1.1)
     sengiri_yaml (0.0.4)
     set (1.0.2)
-    test-unit (3.5.1)
+    test-unit (3.5.2)
       power_assert
     time (0.2.0)
       date
@@ -172,6 +171,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  fileutils (= 1.5.0)
   ginseng-core!
   icalendar
   ricecream
@@ -183,7 +183,7 @@ DEPENDENCIES
   timecop
 
 RUBY VERSION
-   ruby 3.0.2p107
+   ruby 3.0.3p157
 
 BUNDLED WITH
-   2.2.32
+   2.2.33
