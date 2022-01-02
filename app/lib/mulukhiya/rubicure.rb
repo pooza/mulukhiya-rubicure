@@ -34,6 +34,8 @@ module Mulukhiya
       end
     end
 
+    Dir.chdir(dir)
+    ENV['BUNDLE_GEMFILE'] = File.join(dir, 'Gemfile')
     Bundler.require
     loader.setup
     setup_debug
