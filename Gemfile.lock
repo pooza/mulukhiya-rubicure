@@ -33,12 +33,12 @@ GIT
 
 GIT
   remote: https://github.com/pooza/rubicure.git
-  revision: 3769a934a2470badf1d936145b9cfdc1724d0af4
+  revision: 16b8ee5357eaed961ddfebf764696a97e7c584c7
   specs:
-    rubicure (2.1.5.0)
+    rubicure (2.1.5.1)
       activesupport (>= 5.0.0)
       hashie (>= 2.0.5)
-      sengiri_yaml (>= 0.0.2)
+      sengiri_yaml (~> 0.0)
 
 GEM
   remote: https://rubygems.org/
@@ -123,19 +123,19 @@ GEM
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
     rexml (3.2.5)
-    ricecream (0.2.0)
-    rubocop (1.23.0)
+    ricecream (0.2.1)
+    rubocop (1.24.1)
       parallel (~> 1.10)
       parser (>= 3.0.0.0)
       rainbow (>= 2.2.2, < 4.0)
       regexp_parser (>= 1.8, < 3.0)
       rexml
-      rubocop-ast (>= 1.12.0, < 2.0)
+      rubocop-ast (>= 1.15.1, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 3.0)
-    rubocop-ast (1.15.0)
+    rubocop-ast (1.15.1)
       parser (>= 3.0.1.1)
-    rubocop-performance (1.12.0)
+    rubocop-performance (1.13.1)
       rubocop (>= 1.7.0, < 2.0)
       rubocop-ast (>= 0.4.0)
     rubocop-rake (0.6.0)
@@ -147,7 +147,7 @@ GEM
     securerandom (0.1.1)
     sengiri_yaml (0.0.4)
     set (1.0.2)
-    test-unit (3.5.2)
+    test-unit (3.5.3)
       power_assert
     time (0.2.0)
       date
@@ -161,7 +161,7 @@ GEM
     unf_ext (0.0.8-x64-mingw32)
     unicode-display_width (2.1.0)
     yajl-ruby (1.4.1)
-    zeitwerk (2.5.1)
+    zeitwerk (2.5.3)
     zlib (2.1.1)
 
 PLATFORMS
