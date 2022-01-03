@@ -33,12 +33,12 @@ GIT
 
 GIT
   remote: https://github.com/pooza/rubicure.git
-  revision: 16b8ee5357eaed961ddfebf764696a97e7c584c7
+  revision: 83adedf5b5802333c7ee51f753674d4c7363abea
   specs:
-    rubicure (2.1.5.1)
+    rubicure (3.0.0.0)
       activesupport (>= 5.0.0)
       hashie (>= 2.0.5)
-      sengiri_yaml (~> 0.0)
+      sengiri_yaml (>= 1.0.0)
 
 GEM
   remote: https://rubygems.org/
@@ -145,7 +145,7 @@ GEM
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
     securerandom (0.1.1)
-    sengiri_yaml (0.0.4)
+    sengiri_yaml (1.0.0)
     set (1.0.2)
     test-unit (3.5.3)
       power_assert
