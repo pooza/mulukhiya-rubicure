@@ -6,7 +6,7 @@ package:
     - tkoishi@b-shock.co.jp
   license: MIT
   url: https://github.com/pooza/mulukhiya-rubicure
-  version: 1.0.5
+  version: 1.0.6
 tools:
   - girls
   - series
