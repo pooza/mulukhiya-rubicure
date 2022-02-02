@@ -3,9 +3,7 @@ module Mulukhiya
     class LivecureTool < Tool
       def exec(args = {})
         case args[1]&.underscore
-        when nil
-          return LivecureCalendar.new.events
-        when 'json'
+        when nil, 'json'
           return LivecureCalendar.new.events
         when 'calendar'
           @type = 'text/calendar; charset=UTF-8'
