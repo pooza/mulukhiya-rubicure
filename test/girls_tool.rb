@@ -34,7 +34,7 @@ module Mulukhiya
 
         girl = @tool.exec(['girls', 'yell'])
         assert_kind_of(Hash, girl)
-        assert_equal(girl[:cast_birthday], "9/11")
+        assert_equal(girl[:cast_birthday], '9/11')
       end
 
       def test_calendar
