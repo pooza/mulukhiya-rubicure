@@ -31,6 +31,10 @@ module Mulukhiya
         girl = @tool.exec(['girls', 'moonlight'])
         assert_kind_of(Hash, girl)
         assert_equal(girl[:transform_message], "プリキュア！オープンマイハート！\n月光に冴える一輪の花 キュアムーンライト！\nハートキャッチ、プリキュア！")
+
+        girl = @tool.exec(['girls', 'yell'])
+        assert_kind_of(Hash, girl)
+        assert_equal(girl[:cast_birthday], '9/11')
       end
 
       def test_calendar
