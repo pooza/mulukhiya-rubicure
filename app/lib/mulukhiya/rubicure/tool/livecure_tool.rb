@@ -19,9 +19,9 @@ module Mulukhiya
             ical.event do |e|
               case girl[:type]
               when 'cast'
-                e.summary = "#{girl.cast_name}（#{girl.precure_name}役）の誕生日"
+                e.summary = "#{girl.cast_name}（#{girl.precure_name}役）の生誕祭"
               when 'precure'
-                e.summary = "#{girl.human_name}（#{girl.precure_name}）の誕生日"
+                e.summary = "#{girl.human_name}（#{girl.precure_name}）の生誕祭"
               end
               e.dtstart = Icalendar::Values::Date.new(date)
             end
