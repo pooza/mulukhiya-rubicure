@@ -1,4 +1,10 @@
-desc 'test all'
-task :test do
-  Mulukhiya::Rubicure::TestCase.load((ARGV.first&.split(/[^[:word:],]+/) || [])[1])
+module Mulukhiya
+  module Rubicure
+    extend Rake::DSL
+
+    desc 'test all'
+    task :test do
+      TestCase.load
+    end
+  end
 end
