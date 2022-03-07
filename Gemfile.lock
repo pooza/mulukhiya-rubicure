@@ -153,7 +153,7 @@ GEM
       power_assert
     time (0.2.0)
       date
-    timecop (0.9.4)
+    timecop (0.9.5)
     timeout (0.2.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
