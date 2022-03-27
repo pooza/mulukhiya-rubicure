@@ -11,7 +11,7 @@ module Mulukhiya
           assert_kind_of(String, series[:title])
           assert_kind_of(Array, series[:girls])
         end
-        assert_equal(@tool.type, 'application/json; charset=UTF-8')
+        assert_equal('application/json; charset=UTF-8', @tool.type)
       end
 
       def test_one
@@ -22,9 +22,9 @@ module Mulukhiya
 
         series = @tool.exec(['series', 'dokidoki'])
         assert_kind_of(Hash, series)
-        assert_equal(series[:title], 'ドキドキ！プリキュア')
-        assert_equal(series[:girls], ['cure_heart', 'cure_diamond', 'cure_rosetta', 'cure_sword', 'cure_ace'])
-        assert_equal(@tool.type, 'application/json; charset=UTF-8')
+        assert_equal('ドキドキ！プリキュア', series[:title])
+        assert_equal(['cure_heart', 'cure_diamond', 'cure_rosetta', 'cure_sword', 'cure_ace'], series[:girls])
+        assert_equal('application/json; charset=UTF-8', @tool.type)
       end
     end
   end

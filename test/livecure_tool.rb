@@ -22,8 +22,8 @@ module Mulukhiya
 
       def test_calendar
         result = @tool.exec(['livecure', 'calendar'])
-        assert_equal(result.lines.first, "BEGIN:VCALENDAR\r\n")
-        assert_equal(@tool.type, 'text/calendar; charset=UTF-8')
+        assert_equal("BEGIN:VCALENDAR\r\n", result.lines.first)
+        assert_equal('text/calendar; charset=UTF-8', @tool.type)
       end
     end
   end
