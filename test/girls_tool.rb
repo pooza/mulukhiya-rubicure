@@ -12,7 +12,7 @@ module Mulukhiya
           assert_kind_of(String, girl[:human_name])
           assert_kind_of(String, girl[:precure_name])
         end
-        assert_equal(@tool.type, 'application/json; charset=UTF-8')
+        assert_equal('application/json; charset=UTF-8', @tool.type)
       end
 
       def test_one
@@ -23,24 +23,24 @@ module Mulukhiya
 
         girl = @tool.exec(['girls', 'sword'])
         assert_kind_of(Hash, girl)
-        assert_equal(girl[:girl_name], 'cure_sword')
-        assert_equal(girl[:human_name], '剣崎 真琴')
-        assert_equal(girl[:precure_name], 'キュアソード')
-        assert_equal(@tool.type, 'application/json; charset=UTF-8')
+        assert_equal('cure_sword', girl[:girl_name])
+        assert_equal('剣崎 真琴', girl[:human_name])
+        assert_equal('キュアソード', girl[:precure_name])
+        assert_equal('application/json; charset=UTF-8', @tool.type)
 
         girl = @tool.exec(['girls', 'moonlight'])
         assert_kind_of(Hash, girl)
-        assert_equal(girl[:transform_message], "プリキュア！オープンマイハート！\n月光に冴える一輪の花 キュアムーンライト！\nハートキャッチ、プリキュア！")
+        assert_equal("プリキュア！オープンマイハート！\n月光に冴える一輪の花 キュアムーンライト！\nハートキャッチ、プリキュア！", girl[:transform_message])
 
         girl = @tool.exec(['girls', 'yell'])
         assert_kind_of(Hash, girl)
-        assert_equal(girl[:cast_birthday], '9/11')
+        assert_equal('9/11', girl[:cast_birthday])
       end
 
       def test_calendar
         result = @tool.exec(['girls', 'calendar'])
-        assert_equal(result.lines.first, "BEGIN:VCALENDAR\r\n")
-        assert_equal(@tool.type, 'text/calendar; charset=UTF-8')
+        assert_equal("BEGIN:VCALENDAR\r\n", result.lines.first)
+        assert_equal('text/calendar; charset=UTF-8', @tool.type)
       end
     end
   end
