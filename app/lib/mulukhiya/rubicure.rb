@@ -29,9 +29,11 @@ module Mulukhiya
     end
 
     def self.load_tasks
-      Dir.glob(File.join(dir, 'app/task/*.rb')).each do |f|
-        require f
-      end
+      finder = Ginseng::FileFinder.new
+      finder.dir = File.join(dir, 'app/task')
+      finder.patterns.push('*.rb')
+      finder.patterns.push('*.rake')
+      finder.exec.each {|f| require f}
     end
 
     Dir.chdir(dir)
