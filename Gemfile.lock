@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/pooza/ginseng-core.git
-  revision: 9825019967b476b0b0ab82db8d856d771c3590c1
+  revision: 8a61854153f8250b6620eefe3ad5905f9fe4ee3d
   specs:
-    ginseng-core (1.13.2)
+    ginseng-core (1.13.4)
       activesupport (>= 6.1.3.2)
       addressable (>= 2.8.0)
       bundler (~> 2.0)
@@ -20,7 +20,7 @@ GIT
       multi_json
       net-protocol
       net-smtp
-      nokogiri (>= 1.13.4)
+      nokogiri (>= 1.13.5)
       optparse
       rake
       rest-client
@@ -44,7 +44,7 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (7.0.2.3)
+    activesupport (7.0.3)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
@@ -79,8 +79,8 @@ GEM
     icalendar (2.7.1)
       ice_cube (~> 0.16)
     ice_cube (0.16.4)
-    json-schema (2.8.1)
-      addressable (>= 2.4)
+    json-schema (3.0.0)
+      addressable (>= 2.8)
     mail (2.7.1)
       mini_mime (>= 0.1.1)
     mime-types (3.4.1)
@@ -98,7 +98,7 @@ GEM
       net-protocol
       timeout
     netrc (0.11.0)
-    nokogiri (1.13.4)
+    nokogiri (1.13.6)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
     optparse (0.2.0)
