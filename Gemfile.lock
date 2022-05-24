@@ -167,7 +167,6 @@ GEM
 
 PLATFORMS
   x64-mingw32
-  x86_64-freebsd-12
   x86_64-freebsd-13
   x86_64-linux
 
@@ -184,7 +183,7 @@ DEPENDENCIES
   timecop
 
 RUBY VERSION
-   ruby 3.1.1p18
+   ruby 3.1.2p20
 
 BUNDLED WITH
-   2.3.11
+   2.3.14
