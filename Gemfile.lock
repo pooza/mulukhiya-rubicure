@@ -34,7 +34,7 @@ GIT
 
 GIT
   remote: https://github.com/pooza/rubicure.git
-  revision: 278303ad193f147bb823fa1e49550393c74f3219
+  revision: 284990a463be99b2e829e44e3eb4bd4a76a6c361
   specs:
     rubicure (3.1.3.0)
       activesupport (>= 5.0.0)
@@ -44,7 +44,7 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (7.0.3)
+    activesupport (7.0.3.1)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
@@ -74,7 +74,7 @@ GEM
     httparty (0.20.0)
       mime-types (~> 3.0)
       multi_xml (>= 0.5.2)
-    i18n (1.10.0)
+    i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     icalendar (2.8.0)
       ice_cube (~> 0.16)
@@ -99,7 +99,7 @@ GEM
       net-protocol
       timeout
     netrc (0.11.0)
-    nokogiri (1.13.6)
+    nokogiri (1.13.7)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
     optparse (0.2.0)
@@ -188,4 +188,4 @@ RUBY VERSION
    ruby 3.1.2p20
 
 BUNDLED WITH
-   2.3.17
+   2.3.18
