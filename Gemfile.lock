@@ -99,7 +99,7 @@ GEM
       net-protocol
       timeout
     netrc (0.11.0)
-    nokogiri (1.13.7)
+    nokogiri (1.13.9)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
     optparse (0.2.0)
