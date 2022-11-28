@@ -21,6 +21,7 @@ module Mulukhiya
         end
 
         series = @tool.exec(['series', 'dokidoki'])
+
         assert_kind_of(Hash, series)
         assert_equal('ドキドキ！プリキュア', series[:title])
         assert_equal(['cure_heart', 'cure_diamond', 'cure_rosetta', 'cure_sword', 'cure_ace'], series[:girls])
