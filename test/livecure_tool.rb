@@ -7,6 +7,7 @@ module Mulukhiya
 
       def test_exec
         result = @tool.exec(['livecure'])
+
         assert_kind_of(Hash, result)
         result.first(5).each do |date, girls|
           assert_kind_of(Date, date)
@@ -22,6 +23,7 @@ module Mulukhiya
 
       def test_calendar
         result = @tool.exec(['livecure', 'calendar'])
+
         assert_equal("BEGIN:VCALENDAR\r\n", result.lines.first)
         assert_equal('text/calendar; charset=UTF-8', @tool.type)
       end
