@@ -7,6 +7,7 @@ module Mulukhiya
 
       def test_calendar
         result = @tool.exec(['cast', 'calendar'])
+
         assert_equal("BEGIN:VCALENDAR\r\n", result.lines.first)
         assert_equal('text/calendar; charset=UTF-8', @tool.type)
       end
