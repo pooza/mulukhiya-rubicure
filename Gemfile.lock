@@ -38,9 +38,9 @@ GIT
 
 GIT
   remote: https://github.com/pooza/rubicure.git
-  revision: 3df7f4d0f6be7c00241cd286d712d142aa9cb771
+  revision: df5d8706095ceea821f5b01b85252ea6dddd7352
   specs:
-    rubicure (3.1.5.0)
+    rubicure (3.2.0.rc1.0)
       activesupport (>= 5.0.0)
       hashie (>= 2.0.5)
       sengiri_yaml (>= 1.0.0)
