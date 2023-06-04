@@ -38,7 +38,7 @@ GIT
 
 GIT
   remote: https://github.com/pooza/rubicure.git
-  revision: 99ff7dc01a740a77857f2cf26991ff8b5f14af68
+  revision: 835c4e08fab9e706a073389437668ab6a34bb99d
   specs:
     rubicure (3.2.1.0)
       activesupport (>= 5.0.0)
