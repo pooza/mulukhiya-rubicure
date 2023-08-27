@@ -1,10 +1,10 @@
 GIT
   remote: https://github.com/pooza/ginseng-core.git
-  revision: e0d5bfc22e369caa3414e2236bb80e55c077c22c
+  revision: 42b39accaffd53217ddc431891488cabe879ee8a
   specs:
-    ginseng-core (1.13.23)
+    ginseng-core (1.13.25)
       actionpack (>= 7.0.5.1)
-      activesupport (>= 7.0.4.3)
+      activesupport (>= 7.0.7.1)
       addressable (>= 2.8.0)
       bundler (~> 2.0)
       cgi (>= 0.3.5)
@@ -22,7 +22,7 @@ GIT
       multi_json
       net-protocol
       net-smtp
-      nokogiri (>= 1.14.3)
+      nokogiri (>= 1.15.4)
       optparse
       rack (>= 2.2.6.2)
       rails-html-sanitizer (>= 1.4.4)
@@ -48,20 +48,20 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    actionpack (7.0.7)
-      actionview (= 7.0.7)
-      activesupport (= 7.0.7)
+    actionpack (7.0.7.2)
+      actionview (= 7.0.7.2)
+      activesupport (= 7.0.7.2)
       rack (~> 2.0, >= 2.2.4)
       rack-test (>= 0.6.3)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.2.0)
-    actionview (7.0.7)
-      activesupport (= 7.0.7)
+    actionview (7.0.7.2)
+      activesupport (= 7.0.7.2)
       builder (~> 3.1)
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.1, >= 1.2.0)
-    activesupport (7.0.7)
+    activesupport (7.0.7.2)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
@@ -78,7 +78,7 @@ GEM
     date (3.3.3)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
-    erb (4.0.2)
+    erb (4.0.3)
       cgi (>= 0.3.3)
     erubi (1.12.0)
     etc (1.4.2)
@@ -110,7 +110,7 @@ GEM
       net-imap
       net-pop
       net-smtp
-    mime-types (3.5.0)
+    mime-types (3.5.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2023.0808)
     mini_mime (1.1.5)
