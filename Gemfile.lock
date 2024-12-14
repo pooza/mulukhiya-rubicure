@@ -78,7 +78,6 @@ GEM
       cgi (>= 0.3.3)
     etc (1.4.4)
     facets (3.1.0)
-    ffi (1.17.0)
     fileutils (1.7.3)
     find (0.2.0)
     hashie (5.0.0)
@@ -128,6 +127,18 @@ GEM
     nokogiri (1.16.7)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
+    nokogiri (1.16.7-aarch64-linux)
+      racc (~> 1.4)
+    nokogiri (1.16.7-arm-linux)
+      racc (~> 1.4)
+    nokogiri (1.16.7-arm64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.16.7-x86-linux)
+      racc (~> 1.4)
+    nokogiri (1.16.7-x86_64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.16.7-x86_64-linux)
+      racc (~> 1.4)
     optparse (0.6.0)
     ostruct (0.6.1)
     parallel (1.26.3)
@@ -141,12 +152,6 @@ GEM
     rake (13.2.1)
     regexp_parser (2.9.2)
     rest-client (2.1.0)
-      http-accept (>= 1.7.0, < 2.0)
-      http-cookie (>= 1.0.2, < 2.0)
-      mime-types (>= 1.16, < 4.0)
-      netrc (~> 0.8)
-    rest-client (2.1.0-x64-mingw32)
-      ffi (~> 1.9)
       http-accept (>= 1.7.0, < 2.0)
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
@@ -196,7 +201,11 @@ GEM
 
 PLATFORMS
   aarch64-linux
-  x64-mingw32
+  arm-linux
+  arm64-darwin
+  ruby
+  x86-linux
+  x86_64-darwin
   x86_64-freebsd-14
   x86_64-linux
 
