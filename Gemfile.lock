@@ -186,7 +186,7 @@ GEM
     sengiri_yaml (1.0.0)
     set (1.1.1)
     syslog (0.2.0)
-    test-unit (3.6.4)
+    test-unit (3.6.5)
       power_assert
     time (0.4.1)
       date
