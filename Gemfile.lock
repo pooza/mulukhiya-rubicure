@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/pooza/ginseng-core.git
-  revision: bb33644b31340e82ab1816ead7690b7c6f5cad66
+  revision: d88eaf4916bad3ce14a2f9a0cf2d49aea066cb5c
   specs:
     ginseng-core (1.14.5)
       activesupport (>= 7.0.7.1)
@@ -36,9 +36,9 @@ GIT
 
 GIT
   remote: https://github.com/pooza/rubicure.git
-  revision: 3aaa6c1095884f33f27b59f15c3eb449a44f7b48
+  revision: ee642de329375acf54105cf2f337a08fd28a96e9
   specs:
-    rubicure (3.3.4.0)
+    rubicure (4.0.2.0)
       activesupport (>= 5.0.0)
       hashie (>= 2.0.5)
       sengiri_yaml (>= 1.0.0)
@@ -64,12 +64,12 @@ GEM
     ast (2.4.2)
     base64 (0.2.0)
     benchmark (0.4.0)
-    bigdecimal (3.1.8)
+    bigdecimal (3.1.9)
     cgi (0.4.1)
-    concurrent-ruby (1.3.4)
-    connection_pool (2.4.1)
+    concurrent-ruby (1.3.5)
+    connection_pool (2.5.0)
     crass (1.0.6)
-    csv (3.3.0)
+    csv (3.3.2)
     daemon-spawn (0.4.2)
     date (3.4.1)
     domain_name (0.6.20240107)
@@ -88,18 +88,18 @@ GEM
       csv
       mini_mime (>= 1.0.0)
       multi_xml (>= 0.5.2)
-    i18n (1.14.6)
+    i18n (1.14.7)
       concurrent-ruby (~> 1.0)
     icalendar (2.10.3)
       ice_cube (~> 0.16)
       ostruct
     ice_cube (0.17.0)
-    json (2.9.0)
+    json (2.9.1)
     json-schema (5.1.1)
       addressable (~> 2.8)
       bigdecimal (~> 3.1)
-    language_server-protocol (3.17.0.3)
-    logger (1.6.3)
+    language_server-protocol (3.17.0.4)
+    logger (1.6.5)
     mail (2.8.1)
       mini_mime (>= 0.1.1)
       net-imap
@@ -108,14 +108,14 @@ GEM
     mime-types (3.6.0)
       logger
       mime-types-data (~> 3.2015)
-    mime-types-data (3.2024.1203)
+    mime-types-data (3.2025.0107)
     mini_mime (1.1.5)
     mini_portile2 (2.8.8)
     minitest (5.25.4)
     multi_json (1.15.0)
     multi_xml (0.7.1)
       bigdecimal (~> 3.1)
-    net-imap (0.5.1)
+    net-imap (0.5.5)
       date
       net-protocol
     net-pop (0.1.2)
@@ -123,92 +123,75 @@ GEM
     net-protocol (0.2.2)
       timeout
     net-smtp (0.5.0)
-      net-protocol
     netrc (0.11.0)
-    nokogiri (1.17.2)
+    nokogiri (1.18.2)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
-    nokogiri (1.17.2-aarch64-linux)
-      racc (~> 1.4)
-    nokogiri (1.17.2-arm-linux)
-      racc (~> 1.4)
-    nokogiri (1.17.2-arm64-darwin)
-      racc (~> 1.4)
-    nokogiri (1.17.2-x86-linux)
-      racc (~> 1.4)
-    nokogiri (1.17.2-x86_64-darwin)
-      racc (~> 1.4)
-    nokogiri (1.17.2-x86_64-linux)
+    nokogiri (1.18.2-x86_64-linux-gnu)
       racc (~> 1.4)
     optparse (0.6.0)
     ostruct (0.6.1)
     parallel (1.26.3)
-    parser (3.3.6.0)
+    parser (3.3.7.0)
       ast (~> 2.4.1)
       racc
-    power_assert (2.0.4)
+    power_assert (2.0.5)
     public_suffix (6.0.1)
     racc (1.8.1)
     rainbow (3.1.1)
     rake (13.2.1)
-    regexp_parser (2.9.3)
+    regexp_parser (2.10.0)
     rest-client (2.1.0)
       http-accept (>= 1.7.0, < 2.0)
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
     ricecream (0.2.1)
-    rubocop (1.69.2)
+    rubocop (1.71.2)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
       parallel (~> 1.10)
       parser (>= 3.3.0.2)
       rainbow (>= 2.2.2, < 4.0)
       regexp_parser (>= 2.9.3, < 3.0)
-      rubocop-ast (>= 1.36.2, < 2.0)
+      rubocop-ast (>= 1.38.0, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 2.4.0, < 4.0)
-    rubocop-ast (1.37.0)
+    rubocop-ast (1.38.0)
       parser (>= 3.3.1.0)
     rubocop-minitest (0.36.0)
       rubocop (>= 1.61, < 2.0)
       rubocop-ast (>= 1.31.1, < 2.0)
-    rubocop-performance (1.23.0)
+    rubocop-performance (1.23.1)
       rubocop (>= 1.48.1, < 2.0)
       rubocop-ast (>= 1.31.1, < 2.0)
     rubocop-rake (0.6.0)
       rubocop (~> 1.0)
     ruby-progressbar (1.13.0)
-    sanitize (6.1.3)
+    sanitize (7.0.0)
       crass (~> 1.0.2)
-      nokogiri (>= 1.12.0)
-    securerandom (0.4.0)
+      nokogiri (>= 1.16.8)
+    securerandom (0.4.1)
     sengiri_yaml (1.0.0)
     set (1.1.1)
     syslog (0.2.0)
-    test-unit (3.6.4)
+    test-unit (3.6.7)
       power_assert
     time (0.4.1)
       date
     timecop (0.9.10)
-    timeout (0.4.2)
+    timeout (0.4.3)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
-    unicode-display_width (3.1.2)
+    unicode-display_width (3.1.4)
       unicode-emoji (~> 4.0, >= 4.0.4)
     unicode-emoji (4.0.4)
     uri (1.0.2)
     yajl-ruby (1.4.3)
     zeitwerk (2.7.1)
-    zlib (3.2.0)
+    zlib (3.2.1)
 
 PLATFORMS
-  aarch64-linux
-  arm-linux
-  arm64-darwin
-  ruby
-  x86-linux
-  x86_64-darwin
   x86_64-freebsd-14
   x86_64-linux
 
@@ -225,7 +208,7 @@ DEPENDENCIES
   timecop
 
 RUBY VERSION
-   ruby 3.3.6p108
+   ruby 3.4.1p0
 
 BUNDLED WITH
-   2.5.23
+   2.6.2
