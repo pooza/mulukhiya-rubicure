@@ -34,7 +34,11 @@ module Mulukhiya
 
       def fetch_series
         url = "#{config['/gas/series/url']}?action=series"
-        HTTParty.get(url).map {|record| record.transform_keys(&:to_sym)}
+        HTTParty.get(url).map do |record|
+          h = record.transform_keys(&:to_sym)
+          h[:title] = h.delete(:series) if h.key?(:series)
+          h
+        end
       end
     end
   end
