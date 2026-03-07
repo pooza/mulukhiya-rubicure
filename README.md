@@ -19,7 +19,12 @@ clasp login
 ### pushとデプロイ
 
 ```bash
-cd gas
+cd gas/girls
+clasp push
+```
+
+```bash
+cd gas/series
 clasp push
 ```
 
