@@ -15,9 +15,8 @@ function jsonOutput(data) {
   return ContentService.createTextOutput(JSON.stringify(data)).setMimeType(ContentService.MimeType.JSON)
 }
 
-function getSheetRows(sheetName) {
-  const spreadsheet = SpreadsheetApp.getActiveSpreadsheet()
-  const sheet = sheetName ? spreadsheet.getSheetByName(sheetName) : spreadsheet.getActiveSheet()
+function getRows() {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet()
   const rows = sheet.getDataRange().getValues()
   const keys = rows.splice(0, 1)[0]
   return rows.map(row => {
@@ -27,25 +26,31 @@ function getSheetRows(sheetName) {
   }).filter(record => record.key != '')
 }
 
+function formatDate(val) {
+  if (!val || !(val instanceof Date)) return null
+  return (val.getMonth() + 1) + '/' + val.getDate()
+}
+
 function girlsResponse() {
-  const records = getSheetRows('girls')
+  const records = getRows()
   const output = records.map(record => {
-    return {
+    const girl = {
       key: record.key,
       cure_name: record.cure_name,
       human_name: record.human_name,
       cv: record.cv,
       nickname: record.nickname ? record.nickname.split(',') : [],
-      birthday: record.birthday || null,
-      cv_birthday: record.cv_birthday || null,
+      birthday: formatDate(record.birthday),
+      cv_birthday: formatDate(record.cv_birthday),
       title: record.title,
     }
+    return girl
   })
   return jsonOutput(output)
 }
 
 function aliasesResponse() {
-  const records = getSheetRows('girls')
+  const records = getRows()
   const output = {}
 
   records.map(record => {

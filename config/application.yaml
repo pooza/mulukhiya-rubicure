@@ -9,7 +9,7 @@ package:
   version: 1.2.0
 gas:
   girls:
-    url: https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec
+    url: https://script.google.com/macros/s/AKfycbzmH0v7LRMrgf9u4hqpRHYwOtnc_o1zhVRRpXXWpAsfk-CQcT3Hf8L5iwhTDz42UEnWdQ/exec
   series:
     url: https://script.google.com/macros/s/AKfycbxdqh2CNk71V4-5vsiQ0ruEzF9Eu79pzDFyJiQa_GjgSYk9yCTrSo2lGi0wkiGsX_fU/exec
 tools:
