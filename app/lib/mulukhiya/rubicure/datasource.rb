@@ -28,12 +28,12 @@ module Mulukhiya
       private
 
       def fetch_girls
-        url = "#{config['/gas/url']}?action=girls"
+        url = "#{config['/gas/girls/url']}?action=girls"
         HTTParty.get(url).map {|record| record.transform_keys(&:to_sym)}
       end
 
       def fetch_series
-        url = "#{config['/gas/url']}?action=series"
+        url = "#{config['/gas/series/url']}?action=series"
         HTTParty.get(url).map {|record| record.transform_keys(&:to_sym)}
       end
     end

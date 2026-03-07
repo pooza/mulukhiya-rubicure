@@ -8,7 +8,10 @@ package:
   url: https://github.com/pooza/mulukhiya-rubicure
   version: 1.2.0
 gas:
-  url: https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec
+  girls:
+    url: https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec
+  series:
+    url: https://script.google.com/macros/s/AKfycbxdqh2CNk71V4-5vsiQ0ruEzF9Eu79pzDFyJiQa_GjgSYk9yCTrSo2lGi0wkiGsX_fU/exec
 tools:
   - girls
   - series

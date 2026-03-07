@@ -6,8 +6,6 @@ function doGet(e = {}) {
   switch (action) {
     case 'girls':
       return girlsResponse()
-    case 'series':
-      return seriesResponse()
     default:
       return aliasesResponse()
   }
@@ -41,19 +39,6 @@ function girlsResponse() {
       birthday: record.birthday || null,
       cv_birthday: record.cv_birthday || null,
       title: record.title,
-    }
-  })
-  return jsonOutput(output)
-}
-
-function seriesResponse() {
-  const records = getSheetRows('series')
-  const girls = getSheetRows('girls')
-  const output = records.map(record => {
-    return {
-      key: record.key,
-      title: record.title,
-      girls: girls.filter(g => g.title === record.title).map(g => g.key),
     }
   })
   return jsonOutput(output)
