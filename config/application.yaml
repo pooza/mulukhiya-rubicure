@@ -1,7 +1,7 @@
 package:
   authors:
     - Tatsuya Koishi
-  description: モロヘイヤにrubicureにアクセスするためのAPIを提供。
+  description: モロヘイヤにプリキュア淑女録スプレッドシートにアクセスするためのAPIを提供。
   email:
     - tkoishi@b-shock.co.jp
   license: MIT
