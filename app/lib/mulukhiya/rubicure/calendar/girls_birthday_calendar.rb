@@ -3,7 +3,7 @@ module Mulukhiya
     class GirlsBirthdayCalendar < Calendar
       def events
         entries = {}
-        Precure.all.select(&:have_birthday?).each do |girl|
+        Datasource.instance.girls.select(&:have_birthday?).each do |girl|
           (today.year..(today.year + years)).each do |year|
             date = Date.parse("#{year}/#{girl.birthday}")
             next unless include?(date)

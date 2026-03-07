@@ -1,5 +1,3 @@
-require 'rubicure'
-
 module Mulukhiya
   module Rubicure
     class Tool
@@ -41,6 +39,10 @@ module Mulukhiya
 
       def initialize
         @type = 'application/json; charset=UTF-8'
+      end
+
+      def datasource
+        return Datasource.instance
       end
     end
   end

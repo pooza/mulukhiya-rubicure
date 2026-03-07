@@ -16,11 +16,11 @@ module Mulukhiya
       end
 
       def all
-        return Precure.all.map(&:to_h)
+        return datasource.girls.map(&:to_h)
       end
 
       def index
-        return Precure.all.map(&:girl_name)
+        return datasource.girls.map(&:girl_name)
       end
 
       def ical
@@ -39,12 +39,9 @@ module Mulukhiya
       end
 
       def girl(name)
-        [name, "cure_#{name.sub(/^cure_/, '')}"].map(&:to_sym).each do |sym|
-          next unless girl = ::Rubicure::Girl.find(sym)
-          return girl.to_h
-        rescue NameError
-          # nop
-        end
+        girl = datasource.find_girl(name)
+        raise "girl '#{name}' not found" unless girl
+        return girl.to_h
       end
 
       def help

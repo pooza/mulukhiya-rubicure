@@ -16,8 +16,8 @@ module Mulukhiya
 
       def test_one
         assert_kind_of(Hash, @tool.exec(['series', 'dokidoki']))
-        assert_raise ::Rubicure::UnknownSeriesError do
-          @tool.exec(['girls', 'hogefuga']) # typo
+        assert_raise RuntimeError do
+          @tool.exec(['series', 'hogefuga']) # typo
         end
 
         series = @tool.exec(['series', 'dokidoki'])

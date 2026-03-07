@@ -1,0 +1,41 @@
+module Mulukhiya
+  module Rubicure
+    class Datasource
+      include Package
+
+      def self.instance
+        @instance ||= new
+      end
+
+      def girls
+        @girls ||= fetch_girls.map {|record| Girl.new(record)}
+      end
+
+      def find_girl(name)
+        name = name.to_s
+        girls.find {|g| g.key == name || g.key == "cure_#{name}"}
+      end
+
+      def series
+        @series ||= fetch_series
+      end
+
+      def find_series(name)
+        name = name.to_s
+        series.find {|s| s[:key] == name}
+      end
+
+      private
+
+      def fetch_girls
+        url = "#{config['/gas/url']}?action=girls"
+        HTTParty.get(url).map {|record| record.transform_keys(&:to_sym)}
+      end
+
+      def fetch_series
+        url = "#{config['/gas/url']}?action=series"
+        HTTParty.get(url).map {|record| record.transform_keys(&:to_sym)}
+      end
+    end
+  end
+end
