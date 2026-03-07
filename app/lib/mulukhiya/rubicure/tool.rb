@@ -4,6 +4,7 @@ module Mulukhiya
   module Rubicure
     class Tool
       include Package
+
       attr_reader :type
 
       def exec(args = {})
