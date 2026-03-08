@@ -25,7 +25,7 @@ module Mulukhiya
       end
 
       def help
-        return ['bin/cure.rb cast ical - キャストの誕生日カレンダー (iCalendar)']
+        return ['bin/cure.rb cast calendar - キャストの誕生日カレンダー (iCalendar)']
       end
     end
   end
