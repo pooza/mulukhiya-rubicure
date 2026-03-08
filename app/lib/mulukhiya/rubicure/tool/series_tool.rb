@@ -13,7 +13,7 @@ module Mulukhiya
       end
 
       def index
-        return datasource.series.map {|s| s[:title]}
+        return datasource.series.map {|s| s[:key]}
       end
 
       def all
