@@ -20,7 +20,7 @@ module Mulukhiya
       end
 
       def index
-        return datasource.girls.map(&:girl_name)
+        return datasource.girls.map(&:key)
       end
 
       def ical
