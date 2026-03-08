@@ -2,10 +2,7 @@ module Mulukhiya
   module Rubicure
     class Datasource
       include Package
-
-      def self.instance
-        @instance ||= new
-      end
+      include Singleton
 
       def girls
         @girls ||= fetch_girls.map {|record| Girl.new(record)}
@@ -27,14 +24,18 @@ module Mulukhiya
 
       private
 
+      def initialize
+        @http = HTTP.new
+      end
+
       def fetch_girls
         url = "#{config['/gas/girls/url']}?action=girls"
-        HTTParty.get(url).map {|record| record.transform_keys(&:to_sym)}
+        @http.get(url).map {|record| record.transform_keys(&:to_sym)}
       end
 
       def fetch_series
         url = "#{config['/gas/series/url']}?action=series"
-        HTTParty.get(url).map do |record|
+        @http.get(url).map do |record|
           h = record.transform_keys(&:to_sym)
           h[:title] = h.delete(:series) if h.key?(:series)
           h

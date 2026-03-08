@@ -3,7 +3,7 @@ module Mulukhiya
     class CastBirthdayCalendar < Calendar
       def events
         entries = {}
-        Datasource.instance.girls.select(&:have_cast_birthday?).each do |girl|
+        Datasource.instance.girls.select(&:cast_birthday?).each do |girl|
           (today.year..(today.year + years)).each do |year|
             date = Date.parse("#{year}/#{girl.cast_birthday}")
             next unless include?(date)

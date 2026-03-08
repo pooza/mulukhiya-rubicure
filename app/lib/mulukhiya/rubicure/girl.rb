@@ -17,11 +17,11 @@ module Mulukhiya
 
       def girl_name = key
 
-      def have_birthday?
+      def birthday?
         return !birthday.nil? && birthday != ''
       end
 
-      def have_cast_birthday?
+      def cast_birthday?
         return !cast_birthday.nil? && cast_birthday != ''
       end
 
@@ -38,7 +38,7 @@ module Mulukhiya
       end
 
       def merge(other)
-        return Hashie::Mash.new(to_h.merge(other))
+        return to_h.merge(other)
       end
 
       def [](key)

@@ -12,6 +12,12 @@ gas:
     url: https://script.google.com/macros/s/AKfycbwjEOZM0ceSVx61adzDcDopT4gmYKrWXShG25Smi9N9Ho8MDfS_KVzZXVFfG6CdXNY9iA/exec
   series:
     url: https://script.google.com/macros/s/AKfycbxdqh2CNk71V4-5vsiQ0ruEzF9Eu79pzDFyJiQa_GjgSYk9yCTrSo2lGi0wkiGsX_fU/exec
+http:
+  retry:
+    limit: 3
+    seconds: 1
+  timeout:
+    seconds: 30
 tools:
   - girls
   - series
