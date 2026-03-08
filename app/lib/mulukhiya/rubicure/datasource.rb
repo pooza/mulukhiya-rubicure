@@ -10,7 +10,7 @@ module Mulukhiya
 
       def find_girl(name)
         name = name.to_s
-        girls.find {|g| g.key == name || g.key == "cure_#{name}"}
+        girls.find {|g| [name, "cure_#{name}"].include?(g.key)}
       end
 
       def series

@@ -1,3 +1,4 @@
+require 'English'
 module Mulukhiya
   module Rubicure
     class CureCommandTest < TestCase
@@ -24,6 +25,7 @@ module Mulukhiya
 
         assert_content_type(output, 'application/json')
         json = parse_body(output)
+
         assert_kind_of(Hash, json)
         assert_equal('cure_black', json['girl_name'])
       end
@@ -54,6 +56,7 @@ module Mulukhiya
 
         assert_content_type(output, 'application/json')
         json = parse_body(output)
+
         assert_kind_of(Hash, json)
         assert_equal('ふたりはプリキュア', json['title'])
       end
@@ -70,6 +73,7 @@ module Mulukhiya
 
         assert_content_type(output, 'application/json')
         json = parse_body(output)
+
         assert_kind_of(Hash, json)
       end
 
@@ -78,6 +82,7 @@ module Mulukhiya
 
         assert_content_type(output, 'application/json')
         json = parse_body(output)
+
         assert_kind_of(Hash, json)
       end
 
@@ -92,14 +97,15 @@ module Mulukhiya
         output = exec_command('help')
 
         assert_content_type(output, 'text/plain')
-        assert_match(/bin\/cure\.rb/, body(output))
+        assert_match(%r{bin/cure\.rb}, body(output))
       end
 
       private
 
       def exec_command(*args)
         output = `ruby #{@bin} #{args.join(' ')} 2>&1`
-        assert($?.success?, "bin/cure.rb #{args.join(' ')} failed: #{output}")
+
+        assert_predicate($CHILD_STATUS, :success?, "bin/cure.rb #{args.join(' ')} failed: #{output}")
         return output
       end
 
@@ -113,13 +119,15 @@ module Mulukhiya
 
       def assert_content_type(output, expected)
         first_line = output.lines.first.chomp
+
         assert_match(/^Content-Type: #{Regexp.escape(expected)}/, first_line)
       end
 
       def assert_json_array(output)
         json = parse_body(output)
+
         assert_kind_of(Array, json)
-        assert(json.size > 0, 'JSON array should not be empty')
+        assert_operator(json.size, :>, 0, 'JSON array should not be empty')
       end
     end
   end
