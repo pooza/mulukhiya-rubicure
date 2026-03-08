@@ -7,7 +7,7 @@ module Mulukhiya
           events[date] = girls.map {|g| g.merge(type: 'precure')}
         end
         CastBirthdayCalendar.new(all: false).events.each do |date, girls|
-          girls.reject(&:have_birthday?).each do |girl|
+          girls.reject(&:birthday?).each do |girl|
             events[date] ||= []
             events[date].push(girl.merge(type: 'cast'))
           end

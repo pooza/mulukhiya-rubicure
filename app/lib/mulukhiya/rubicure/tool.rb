@@ -1,9 +1,8 @@
-require 'rubicure'
-
 module Mulukhiya
   module Rubicure
     class Tool
       include Package
+
       attr_reader :type
 
       def exec(args = {})
@@ -40,6 +39,10 @@ module Mulukhiya
 
       def initialize
         @type = 'application/json; charset=UTF-8'
+      end
+
+      def datasource
+        return Datasource.instance
       end
     end
   end

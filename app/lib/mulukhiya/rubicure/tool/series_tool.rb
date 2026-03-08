@@ -13,15 +13,17 @@ module Mulukhiya
       end
 
       def index
-        return Precure.map(&:series_name)
+        return datasource.series.map {|s| s[:title]}
       end
 
       def all
-        return Precure.map(&:to_h)
+        return datasource.series
       end
 
       def series(name)
-        return ::Rubicure::Series.find(name.to_sym).to_h
+        s = datasource.find_series(name)
+        raise "series '#{name}' not found" unless s
+        return s
       end
 
       def help
