@@ -42,7 +42,7 @@ function girlsResponse() {
       nickname: record.nickname ? record.nickname.split(',') : [],
       birthday: formatDate(record.birthday),
       cv_birthday: formatDate(record.cv_birthday),
-      title: record.title,
+      title: record.title || null,
     }
     return girl
   })
