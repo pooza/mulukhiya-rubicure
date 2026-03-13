@@ -9,7 +9,7 @@ package:
   version: 2.0.3
 gas:
   girls:
-    url: https://script.google.com/macros/s/AKfycbwjEOZM0ceSVx61adzDcDopT4gmYKrWXShG25Smi9N9Ho8MDfS_KVzZXVFfG6CdXNY9iA/exec
+    url: https://script.google.com/macros/s/AKfycbyz2apomjlyawkhLI-XvZveeEPVvLXmGzshHiE9mfsZT8DOOKAwKRQ_CxzfBiv7Qki33A/exec
   series:
     url: https://script.google.com/macros/s/AKfycbxdqh2CNk71V4-5vsiQ0ruEzF9Eu79pzDFyJiQa_GjgSYk9yCTrSo2lGi0wkiGsX_fU/exec
 http:
