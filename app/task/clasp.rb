@@ -1,3 +1,4 @@
+require 'English'
 module Mulukhiya
   module Rubicure
     extend Rake::DSL
@@ -16,7 +17,7 @@ module Mulukhiya
           task deploy: :push do
             output = Dir.chdir(gas_dir) {`clasp deploy 2>&1`}
             puts output
-            raise "clasp deploy failed" unless $?.success?
+            raise 'clasp deploy failed' unless $CHILD_STATUS.success?
             if (m = output.match(/Deployed\s+(\S+)\s+@/))
               deployment_id = m[1]
               url = "https://script.google.com/macros/s/#{deployment_id}/exec"
@@ -25,7 +26,10 @@ module Mulukhiya
               in_section = false
               updated = content.lines.map do |line|
                 in_section = true if line.match?(/^\s+#{name}:/)
-                in_section = false if in_section && line.match?(/^\s+\w+:/) && !line.match?(/^\s+#{name}:/) && !line.match?(/^\s+url:/)
+                if in_section && line.match?(/^\s+\w+:/) &&
+                   !line.match?(/^\s+#{name}:/) && !line.match?(/^\s+url:/)
+                  in_section = false
+                end
                 if in_section && line.match?(/^\s+url:/)
                   in_section = false
                   line.sub(/url:.*$/, "url: #{url}")
