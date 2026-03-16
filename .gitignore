@@ -8,3 +8,5 @@ Desktop.ini
 .sass-cache
 dist
 *.code-workspace
+tmp/pids/*.pid
+tmp/cache/

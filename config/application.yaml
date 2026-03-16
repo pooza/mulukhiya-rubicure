@@ -18,6 +18,10 @@ http:
     seconds: 1
   timeout:
     seconds: 30
+puma:
+  port: 3009
+  workers: 0
+  threads: 1
 tools:
   - girls
   - series

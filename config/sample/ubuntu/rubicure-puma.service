@@ -1,0 +1,15 @@
+[Unit]
+Description=mulukhiya-rubicure (puma)
+After=network.target
+
+[Service]
+Type=simple
+User=__username__
+WorkingDirectory=/home/__username__/path/to/mulukhiya-rubicure
+ExecStart=/bin/bash -lc 'bundle exec bin/puma_daemon.rb start'
+ExecStop=/bin/kill -TERM $MAINPID
+TimeoutStopSec=15
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
