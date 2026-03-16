@@ -40,7 +40,7 @@ module Mulukhiya
 
       def girl(name)
         girl = datasource.find_girl(name)
-        raise "girl '#{name}' not found" unless girl
+        raise Ginseng::NotFoundError, "girl '#{name}' not found" unless girl
         return girl.to_h
       end
 

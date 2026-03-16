@@ -1,4 +1,6 @@
 require 'bundler/setup'
+require 'sinatra/base'
+require 'ginseng/web'
 require 'mulukhiya/rubicure/refines'
 
 module Mulukhiya

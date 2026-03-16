@@ -15,7 +15,7 @@ module Mulukhiya
 
       def test_one
         assert_kind_of(Hash, @tool.exec(['series', 'dokidoki']))
-        assert_raise RuntimeError do
+        assert_raise Ginseng::NotFoundError do
           @tool.exec(['series', 'hogefuga']) # typo
         end
 

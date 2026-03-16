@@ -22,7 +22,7 @@ module Mulukhiya
 
       def series(name)
         s = datasource.find_series(name)
-        raise "series '#{name}' not found" unless s
+        raise Ginseng::NotFoundError, "series '#{name}' not found" unless s
         return s
       end
 
