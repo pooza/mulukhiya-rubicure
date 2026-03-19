@@ -96,7 +96,7 @@ GEM
       logger
       ostruct
     ice_cube (0.17.0)
-    json (2.19.0)
+    json (2.19.2)
     json-schema (6.2.0)
       addressable (~> 2.8)
       bigdecimal (>= 3.1, < 5)
@@ -177,7 +177,7 @@ GEM
       rubocop-ast (>= 1.49.0, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 2.4.0, < 4.0)
-    rubocop-ast (1.49.0)
+    rubocop-ast (1.49.1)
       parser (>= 3.3.7.2)
       prism (~> 1.7)
     rubocop-minitest (0.39.1)
@@ -219,7 +219,7 @@ GEM
     time (0.4.2)
       date
     timecop (0.9.10)
-    timeout (0.6.0)
+    timeout (0.6.1)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (3.2.0)
