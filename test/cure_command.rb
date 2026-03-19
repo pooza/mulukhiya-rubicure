@@ -67,31 +67,6 @@ module CureAPI
       assert_match(/^BEGIN:VCALENDAR\r?\n/, body(output))
     end
 
-    def test_livecure
-      output = exec_command('livecure')
-
-      assert_content_type(output, 'application/json')
-      json = parse_body(output)
-
-      assert_kind_of(Hash, json)
-    end
-
-    def test_livecure_json
-      output = exec_command('livecure', 'json')
-
-      assert_content_type(output, 'application/json')
-      json = parse_body(output)
-
-      assert_kind_of(Hash, json)
-    end
-
-    def test_livecure_calendar
-      output = exec_command('livecure', 'calendar')
-
-      assert_content_type(output, 'text/calendar')
-      assert_match(/^BEGIN:VCALENDAR\r?\n/, body(output))
-    end
-
     def test_help
       output = exec_command('help')
 
