@@ -1,11 +1,11 @@
 [Unit]
-Description=mulukhiya-rubicure (puma)
+Description=cure-api (puma)
 After=network.target
 
 [Service]
 Type=simple
 User=__username__
-WorkingDirectory=/home/__username__/path/to/mulukhiya-rubicure
+WorkingDirectory=/home/__username__/path/to/cure-api
 ExecStart=/bin/bash -lc 'bundle exec bin/puma_daemon.rb start'
 ExecStop=/bin/kill -TERM $MAINPID
 TimeoutStopSec=15

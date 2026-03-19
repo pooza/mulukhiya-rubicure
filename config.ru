@@ -1,4 +1,4 @@
 $LOAD_PATH.unshift(File.join(File.expand_path(__dir__), 'app/lib'))
 
-require 'mulukhiya/rubicure'
-run Mulukhiya::Rubicure::Controller
+require 'cure_api'
+run CureAPI::Controller

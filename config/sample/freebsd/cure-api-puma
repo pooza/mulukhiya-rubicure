@@ -1,0 +1,40 @@
+#!/bin/sh
+
+# PROVIDE: cure_api_puma
+# REQUIRE: LOGIN
+
+# Add the following line to /etc/rc.conf to enable `cure_api':
+#
+#cure_api_enable="YES"
+
+. /etc/rc.subr
+
+name="cure_api_puma"
+rcvar="cure_api_enable"
+
+load_rc_config "$name"
+: ${cure_api_enable="NO"}
+: ${cure_api_path=""}
+: ${cure_api_user=""}
+
+export PATH=${PATH}:/usr/local/bin:/usr/local/sbin
+export LANG=ja_JP.UTF-8
+export LC_ALL=ja_JP.UTF-8
+
+start_cmd=${name}_start
+stop_cmd=${name}_stop
+
+cure_api_puma_start() {
+  cd $cure_api_path
+  sudo -u $cure_api_user /usr/sbin/daemon \
+    /usr/local/bin/bash -lc "cd ${cure_api_path} && RACK_ENV=production bundle exec bin/puma_daemon.rb start"
+}
+
+cure_api_puma_stop() {
+  cd $cure_api_path
+  sudo -u $cure_api_user /usr/local/bin/bash -lc 'bundle exec bin/puma_daemon.rb stop' 2>/dev/null
+  pkill -9 -u $cure_api_user -f 'cure.api.*puma_daemon.rb' 2>/dev/null
+  sleep 2
+}
+
+run_rc_command "$1"

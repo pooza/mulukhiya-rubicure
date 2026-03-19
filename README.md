@@ -1,9 +1,10 @@
-# mulukhiya-rubicure
+# cure-api
 
-プリキュア淑女録スプレッドシートにアクセスするためのAPIを提供するCLIツールです。
-[モロヘイヤ](https://github.com/pooza/mulukhiya-toot-proxy/)のプラグインとしても利用できます。
+プリキュア淑女録スプレッドシートにアクセスするためのAPIサーバー / CLIツールです。
 
 ## 使い方
+
+### CLIとして
 
 ```bash
 bin/cure.rb girls              # すべてのプリキュア (JSON)
@@ -17,6 +18,12 @@ bin/cure.rb cast calendar      # キャストの誕生日カレンダー (iCalen
 bin/cure.rb livecure           # 直近の実況日程 (JSON)
 bin/cure.rb livecure calendar  # 直近の実況日程 (iCalendar)
 bin/cure.rb help               # ヘルプ
+```
+
+### HTTPサーバーとして
+
+```bash
+bundle exec bin/puma_daemon.rb start  # ポート3009で起動
 ```
 
 ## テスト
