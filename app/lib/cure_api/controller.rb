@@ -1,5 +1,7 @@
 module CureAPI
   class Controller < Sinatra::Base
+    set :host_authorization, {permitted_hosts: []}
+
     ENDPOINTS = [
       {path: '/girls', description: 'すべてのプリキュア (JSON)'},
       {path: '/girls/index', description: 'プリキュア名の一覧 (JSON)'},
