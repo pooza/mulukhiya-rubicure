@@ -28,7 +28,8 @@ module CureAPI
           const path = a.dataset.endpoint
           const label = document.getElementById('endpoint-label')
           const result = document.getElementById('result')
-          label.textContent = path
+          const url = new URL(path, location.origin).href
+          label.innerHTML = '<a href="' + url + '" target="_blank">' + url + '</a>'
           result.style.display = 'block'
           result.textContent = 'Loading...'
           try {
