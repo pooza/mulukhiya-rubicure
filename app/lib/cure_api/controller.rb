@@ -13,6 +13,35 @@ module CureAPI
       {path: '/cast/calendar', description: 'キャストの誕生日カレンダー (iCalendar)'},
     ].freeze
 
+    INDEX_STYLE = <<~CSS.freeze
+      body { font-family: sans-serif; max-width: 900px; margin: 2em auto; padding: 0 1em; }
+      a[data-endpoint] { cursor: pointer; }
+      pre#result { background: #f4f4f4; padding: 1em; border-radius: 4px;
+        overflow-x: auto; white-space: pre-wrap; word-break: break-word; display: none; }
+      #endpoint-label { color: #666; font-size: 0.9em; }
+    CSS
+
+    INDEX_SCRIPT = <<~JS.freeze
+      document.querySelectorAll('a[data-endpoint]').forEach(a => {
+        a.addEventListener('click', async (e) => {
+          e.preventDefault()
+          const path = a.dataset.endpoint
+          const label = document.getElementById('endpoint-label')
+          const result = document.getElementById('result')
+          label.textContent = path
+          result.style.display = 'block'
+          result.textContent = 'Loading...'
+          try {
+            const res = await fetch(path)
+            const ct = res.headers.get('content-type') || ''
+            const text = await res.text()
+            result.textContent = ct.includes('json')
+              ? JSON.stringify(JSON.parse(text), null, 2) : text
+          } catch (err) { result.textContent = 'Error: ' + err.message }
+        })
+      })
+    JS
+
     before do
       @renderer = Ginseng::Web::JSONRenderer.new
     end
@@ -25,24 +54,7 @@ module CureAPI
     get '/' do
       @raw_response = true
       content_type 'text/html; charset=UTF-8'
-      items = ENDPOINTS.map do |ep|
-        href = ep[:example] || ep[:path]
-        "<li><a href=\"#{href}\">#{ep[:path]}</a> &mdash; #{ep[:description]}</li>"
-      end.join("\n        ")
-      return <<~HTML
-        <!DOCTYPE html>
-        <html lang="ja">
-        <head><meta charset="UTF-8"><title>#{Package.name}</title></head>
-        <body>
-        <h1>#{Package.name}</h1>
-        <p>#{Package.full_name}</p>
-        <h2>エンドポイント一覧</h2>
-        <ul>
-        #{items}
-        </ul>
-        </body>
-        </html>
-      HTML
+      return index_html
     end
 
     get '/girls' do
@@ -115,6 +127,31 @@ module CureAPI
       @renderer.status = 500
       @renderer.message = {error: e.message}
       return @renderer.to_s
+    end
+
+    private
+
+    def index_html
+      items = ENDPOINTS.map do |ep|
+        href = ep[:example] || ep[:path]
+        %(<li><a href="#" data-endpoint="#{href}">) +
+          "#{ep[:path]}</a> &mdash; #{ep[:description]}</li>"
+      end.join("\n      ")
+      <<~HTML
+        <!DOCTYPE html>
+        <html lang="ja">
+        <head><meta charset="UTF-8"><title>#{Package.name}</title>
+        <style>#{INDEX_STYLE}</style></head>
+        <body>
+        <h1>#{Package.name}</h1>
+        <p>#{Package.full_name}</p>
+        <h2>エンドポイント一覧</h2>
+        <ul>#{items}</ul>
+        <h2>結果 <span id="endpoint-label"></span></h2>
+        <pre id="result"></pre>
+        <script>#{INDEX_SCRIPT}</script>
+        </body></html>
+      HTML
     end
   end
 end
