@@ -1,134 +1,132 @@
 require 'English'
-module Mulukhiya
-  module Rubicure
-    class CureCommandTest < TestCase
-      def setup
-        @bin = File.join(Environment.dir, 'bin/cure.rb')
-      end
+module CureAPI
+  class CureCommandTest < TestCase
+    def setup
+      @bin = File.join(Environment.dir, 'bin/cure.rb')
+    end
 
-      def test_girls
-        output = exec_command('girls')
+    def test_girls
+      output = exec_command('girls')
 
-        assert_content_type(output, 'application/json')
-        assert_json_array(output)
-      end
+      assert_content_type(output, 'application/json')
+      assert_json_array(output)
+    end
 
-      def test_girls_index
-        output = exec_command('girls', 'index')
+    def test_girls_index
+      output = exec_command('girls', 'index')
 
-        assert_content_type(output, 'application/json')
-        assert_json_array(output)
-      end
+      assert_content_type(output, 'application/json')
+      assert_json_array(output)
+    end
 
-      def test_girls_name
-        output = exec_command('girls', 'black')
+    def test_girls_name
+      output = exec_command('girls', 'black')
 
-        assert_content_type(output, 'application/json')
-        json = parse_body(output)
+      assert_content_type(output, 'application/json')
+      json = parse_body(output)
 
-        assert_kind_of(Hash, json)
-        assert_equal('cure_black', json['girl_name'])
-      end
+      assert_kind_of(Hash, json)
+      assert_equal('cure_black', json['girl_name'])
+    end
 
-      def test_girls_calendar
-        output = exec_command('girls', 'calendar')
+    def test_girls_calendar
+      output = exec_command('girls', 'calendar')
 
-        assert_content_type(output, 'text/calendar')
-        assert_match(/^BEGIN:VCALENDAR\r?\n/, body(output))
-      end
+      assert_content_type(output, 'text/calendar')
+      assert_match(/^BEGIN:VCALENDAR\r?\n/, body(output))
+    end
 
-      def test_series
-        output = exec_command('series')
+    def test_series
+      output = exec_command('series')
 
-        assert_content_type(output, 'application/json')
-        assert_json_array(output)
-      end
+      assert_content_type(output, 'application/json')
+      assert_json_array(output)
+    end
 
-      def test_series_index
-        output = exec_command('series', 'index')
+    def test_series_index
+      output = exec_command('series', 'index')
 
-        assert_content_type(output, 'application/json')
-        assert_json_array(output)
-      end
+      assert_content_type(output, 'application/json')
+      assert_json_array(output)
+    end
 
-      def test_series_name
-        output = exec_command('series', 'unmarked')
+    def test_series_name
+      output = exec_command('series', 'unmarked')
 
-        assert_content_type(output, 'application/json')
-        json = parse_body(output)
+      assert_content_type(output, 'application/json')
+      json = parse_body(output)
 
-        assert_kind_of(Hash, json)
-        assert_equal('ふたりはプリキュア', json['title'])
-      end
+      assert_kind_of(Hash, json)
+      assert_equal('ふたりはプリキュア', json['title'])
+    end
 
-      def test_cast_calendar
-        output = exec_command('cast', 'calendar')
+    def test_cast_calendar
+      output = exec_command('cast', 'calendar')
 
-        assert_content_type(output, 'text/calendar')
-        assert_match(/^BEGIN:VCALENDAR\r?\n/, body(output))
-      end
+      assert_content_type(output, 'text/calendar')
+      assert_match(/^BEGIN:VCALENDAR\r?\n/, body(output))
+    end
 
-      def test_livecure
-        output = exec_command('livecure')
+    def test_livecure
+      output = exec_command('livecure')
 
-        assert_content_type(output, 'application/json')
-        json = parse_body(output)
+      assert_content_type(output, 'application/json')
+      json = parse_body(output)
 
-        assert_kind_of(Hash, json)
-      end
+      assert_kind_of(Hash, json)
+    end
 
-      def test_livecure_json
-        output = exec_command('livecure', 'json')
+    def test_livecure_json
+      output = exec_command('livecure', 'json')
 
-        assert_content_type(output, 'application/json')
-        json = parse_body(output)
+      assert_content_type(output, 'application/json')
+      json = parse_body(output)
 
-        assert_kind_of(Hash, json)
-      end
+      assert_kind_of(Hash, json)
+    end
 
-      def test_livecure_calendar
-        output = exec_command('livecure', 'calendar')
+    def test_livecure_calendar
+      output = exec_command('livecure', 'calendar')
 
-        assert_content_type(output, 'text/calendar')
-        assert_match(/^BEGIN:VCALENDAR\r?\n/, body(output))
-      end
+      assert_content_type(output, 'text/calendar')
+      assert_match(/^BEGIN:VCALENDAR\r?\n/, body(output))
+    end
 
-      def test_help
-        output = exec_command('help')
+    def test_help
+      output = exec_command('help')
 
-        assert_content_type(output, 'text/plain')
-        assert_match(%r{bin/cure\.rb}, body(output))
-      end
+      assert_content_type(output, 'text/plain')
+      assert_match(%r{bin/cure\.rb}, body(output))
+    end
 
-      private
+    private
 
-      def exec_command(*args)
-        output = `ruby #{@bin} #{args.join(' ')} 2>&1`
+    def exec_command(*args)
+      output = `ruby #{@bin} #{args.join(' ')} 2>&1`
 
-        assert_predicate($CHILD_STATUS, :success?, "bin/cure.rb #{args.join(' ')} failed: #{output}")
-        return output
-      end
+      assert_predicate($CHILD_STATUS, :success?, "bin/cure.rb #{args.join(' ')} failed: #{output}")
+      return output
+    end
 
-      def body(output)
-        return output.split("\n\n", 2).last
-      end
+    def body(output)
+      return output.split("\n\n", 2).last
+    end
 
-      def parse_body(output)
-        return JSON.parse(body(output))
-      end
+    def parse_body(output)
+      return JSON.parse(body(output))
+    end
 
-      def assert_content_type(output, expected)
-        first_line = output.lines.first.chomp
+    def assert_content_type(output, expected)
+      first_line = output.lines.first.chomp
 
-        assert_match(/^Content-Type: #{Regexp.escape(expected)}/, first_line)
-      end
+      assert_match(/^Content-Type: #{Regexp.escape(expected)}/, first_line)
+    end
 
-      def assert_json_array(output)
-        json = parse_body(output)
+    def assert_json_array(output)
+      json = parse_body(output)
 
-        assert_kind_of(Array, json)
-        assert_operator(json.size, :>, 0, 'JSON array should not be empty')
-      end
+      assert_kind_of(Array, json)
+      assert_operator(json.size, :>, 0, 'JSON array should not be empty')
     end
   end
 end

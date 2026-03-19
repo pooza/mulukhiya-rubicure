@@ -1,10 +1,8 @@
-module Mulukhiya
-  module Rubicure
-    extend Rake::DSL
+module CureAPI
+  extend Rake::DSL
 
-    desc 'test all'
-    task :test do
-      TestCase.load
-    end
+  desc 'test all'
+  task :test do
+    TestCase.load
   end
 end
