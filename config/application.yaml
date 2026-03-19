@@ -1,12 +1,12 @@
 package:
   authors:
     - Tatsuya Koishi
-  description: モロヘイヤにプリキュア淑女録スプレッドシートにアクセスするためのAPIを提供。
+  description: プリキュア淑女録スプレッドシートにアクセスするためのAPI。
   email:
     - tkoishi@b-shock.co.jp
   license: MIT
-  url: https://github.com/pooza/mulukhiya-rubicure
-  version: 2.0.3
+  url: https://github.com/pooza/cure-api
+  version: 3.0.0
 gas:
   girls:
     url: https://script.google.com/macros/s/AKfycbyz2apomjlyawkhLI-XvZveeEPVvLXmGzshHiE9mfsZT8DOOKAwKRQ_CxzfBiv7Qki33A/exec
@@ -18,9 +18,12 @@ http:
     seconds: 1
   timeout:
     seconds: 30
+puma:
+  port: 3009
+  workers: 0
+  threads: 1
 tools:
   - girls
   - series
   - cast
-  - livecure
   - help

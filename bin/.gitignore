@@ -1,3 +1,4 @@
 *.rb
 !cure.rb
+!puma_daemon.rb
 !test.rb
